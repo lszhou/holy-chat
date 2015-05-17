@@ -65,6 +65,10 @@ var holyChat = angular.module('holyChat', ['ngResource', 'ngRoute'])
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
+      .when('/register', {
+        templateUrl: 'partials/register',
+        controller: 'RegisterCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -80,46 +84,3 @@ var holyChat = angular.module('holyChat', ['ngResource', 'ngRoute'])
       $http.post('/logout');
     };
   });
-
-
-/**********************************************************************
- * Login controller
- **********************************************************************/
-holyChat.controller('LoginCtrl', function($scope, $rootScope, $http, $location) {
-  // This object will be filled by the form
-  $scope.user = {};
-
-  // Register the login() function
-  $scope.login = function(){
-    $http.post('/login', {
-      username: $scope.user.username,
-      password: $scope.user.password,
-    })
-    .success(function(user){
-      // No error: authentication OK
-      $rootScope.message = 'Authentication successful!';
-      $location.url('/');
-    })
-    .error(function(){
-      // Error: authentication failed
-      $rootScope.message = 'Authentication failed.';
-      $location.url('/login');
-    });
-  };
-});
-
-
-
-/**********************************************************************
- * Main controller
- **********************************************************************/
-holyChat.controller('MainCtrl', function($scope, $http) {
-  // List of users got from the server
-  $scope.users = [];
-
-  // Fill the array to display it in the page
-  $http.get('/api/user').success(function(users){
-    for (var i in users)
-      $scope.users.push(users[i]);
-  });
-});

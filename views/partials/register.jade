@@ -1,0 +1,7 @@
+form.form-register(ng-submit="register()")
+  input.form-control(type="text", placeholder="first name", required, autofocus, ng-model="newuser.firstname")
+  input.form-control(type="text", placeholder="last name", required, autofocus, ng-model="newuser.lastname")
+  input.form-control(type="text", placeholder="email address", required, autofocus, ng-model="newuser.email")
+  input.form-control(type="password", placeholder="password", required, ng-model="newuser.password1")
+  input.form-control(type="password", placeholder="password", required, ng-model="newuser.password2")
+  button.btn.btn-lg.btn-primary.btn-block(type="submit") Register
