@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  header
+    nav.navbar.navbar-default
+      div.container
+        div.navbar-header
+          a.navbar-brand(href='#/') HOLY CHAT
+
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='#/')
+              i.fa.fa-home  Home
+          li
+            a(href='#/admin') Admin
+          li
+            a(href='#/login') Log In
+
+  div.container
+    div(ng-view)

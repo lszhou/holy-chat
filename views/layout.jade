@@ -1,0 +1,15 @@
+doctype html
+html(ng-app="holyChat", lang='en-us')
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/libs/font-awesome/css/font-awesome.min.css')
+    //script(src='/libs/jquery/dist/jquery.min.js')
+    script(src='/libs/angular/angular.min.js')
+    script(src='/libs/angular-route/angular-route.min.js')
+    script(src='/libs/angular-resource/angular-resource.min.js')
+    script(src='/js/app.js')
+  body
+    block content
